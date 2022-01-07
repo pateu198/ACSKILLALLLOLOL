@@ -1,0 +1,9 @@
+if game.ReplicatedStorage:FindFirstChild("ACS_Engine") then
+   for _,player in pairs(game.Players:GetPlayers()) do
+       if player ~= game.Players.LocalPlayer then
+           game.ReplicatedStorage["ACS_Engine"].Eventos.Damage:FireServer(player.Character.Humanoid, 100, 100, 0)
+       end
+   end
+else
+   print("Game doesn't have ACS!")
+end
